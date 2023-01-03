@@ -35,6 +35,7 @@ ALLOWED_HOSTS = ['localhost', 'stark-brushlands-66785.herokuapp.com']
 INSTALLED_APPS = [
     'corsheaders',
     'rest_framework',
+    'auth_api',
     'posts_api',
     'django.contrib.admin',
     'django.contrib.auth',
