@@ -3,7 +3,7 @@ from django.db import models
 # Create your models here.
 class Post(models.Model):
     user = models.CharField(max_length=32)
-    title = models.CharField(max_length=40)
-    formBody = models.CharField(max_length=300)
-    imageURL = models.CharField(max_length=200, null=True)
+    title = models.CharField(max_length=255)
+    formBody = models.TextField(null=True, blank=True)
+    imageURL = models.CharField(max_length=200, null=True, blank=True)
     created = models.DateTimeField(auto_now_add=True)
