@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-7e5v@id0))93=8e@=p1g9fkfr+bdstx+k%h7^fxphj9yrsbtz=
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', 'stark-brushlands-66785.herokuapp.com']
+ALLOWED_HOSTS = ['127.0.0.1', 'stark-brushlands-66785.herokuapp.com']
 
 
 # Application definition
@@ -35,6 +35,7 @@ ALLOWED_HOSTS = ['localhost', 'stark-brushlands-66785.herokuapp.com']
 INSTALLED_APPS = [
     'corsheaders',
     'rest_framework',
+    'auth_api',
     'posts_api',
     'django.contrib.admin',
     'django.contrib.auth',
