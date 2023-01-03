@@ -21,12 +21,12 @@ def check_login(request):
 
     if request.method=='PUT':
         JsonRequest = json.loads(request.body)
-        email = jsonRequest['email']
+        email = JsonRequest['email']
         password = JsonRequest['password']
         if User.objects.get(email=email):
             user = User.objects.get(email=email)
             if check_password(password, user.password):
-                return JsonResponse({'id': user.id, 'email': user.email})
+                return JsonResponse({'id': user.id, 'firstname': user.firstname, 'lastname': user.lastname, 'email': user.email})
             else:
                 return JsonResponse({})
         else:
