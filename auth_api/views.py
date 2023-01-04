@@ -23,11 +23,11 @@ def check_login(request):
         JsonRequest = json.loads(request.body)
         email = JsonRequest['email']
         password = JsonRequest['password']
-        if User.objects.get(email=email):
+        try :
             user = User.objects.get(email=email)
             if check_password(password, user.password):
-                return JsonResponse({'id': user.id, 'firstname': user.firstname, 'lastname': user.lastname, 'email': user.email})
+                return JsonResponse({'id': user.id, 'firstname': user.firstname, 'lastname': user.lastname, 'username':user.username, 'email': user.email})
             else:
-                return JsonResponse({})
-        else:
-            return JsonResponse({})
+                return JsonResponse({'password' : 'Incorrect password'}, status=500)
+        except:
+            return JsonResponse({'email' : 'Email does not exist'}, status=500)
