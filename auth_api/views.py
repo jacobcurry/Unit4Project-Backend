@@ -28,6 +28,6 @@ def check_login(request):
             if check_password(password, user.password):
                 return JsonResponse({'id': user.id, 'firstname': user.firstname, 'lastname': user.lastname, 'email': user.email})
             else:
-                return JsonResponse({})
+                return JsonResponse({'error' : 'password does not match'})
         else:
-            return JsonResponse({})
+            return JsonResponse({'error' : 'email does not exist'})
