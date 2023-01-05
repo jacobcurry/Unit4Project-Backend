@@ -4,6 +4,7 @@ from django.shortcuts import render
 from rest_framework import generics
 from .serializers import PostSerializer
 from .models import Post
+from auth_api.models import User
 
 class PostList(generics.ListCreateAPIView):
     queryset = Post.objects.all().order_by('-id')
