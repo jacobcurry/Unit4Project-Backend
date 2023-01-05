@@ -1,5 +1,4 @@
 from django.shortcuts import render
-from django.db.models import F, Value
 
 # Create your views here.
 from rest_framework import generics
