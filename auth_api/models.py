@@ -1,4 +1,6 @@
 from django.db import models
+from django.forms.models import model_to_dict
+import json
 
 # Create your models here.
 class User(models.Model):
@@ -9,4 +11,10 @@ class User(models.Model):
     password = models.CharField(max_length=255)
 
     def __str__(self):
-        return '%s' % (self.username)
+        obj = {
+            'firstname': self.firstname,
+            'lastname': self.lastname,
+            'username': self.username,
+            'email': self.email,
+        }
+        return json.dumps(obj)
